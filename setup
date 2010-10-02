@@ -1,0 +1,89 @@
+#!/usr/bin/env perl
+
+# This is for setting up dotfiles from a cloned repo.  The assumption
+# is that ~/dotfiles is the repo and this is a sane linux install.
+# This script will iterate the ~/dotfiles contents and, for each file
+# it finds, it'll replace ~/$file with a symlink to ~/dotfiles/$file.
+# Directories are handled similarly.
+#
+# Originals are preserved as $file.orig
+
+my $home = $ENV{HOME};
+my $repo = 'dotfiles';
+
+my %skip_dir = (
+	'.git' => 1,
+);
+
+chdir "$home" or die "$!";
+
+if (not -d "$repo") {
+	die "please clone the repo and stash it in $home/$repo";
+}
+
+chdir "$repo" or die "$!";
+
+opendir D, '.';
+my @items = grep { /^\.[^.]/ } readdir D;
+closedir D;
+
+for my $item (@items) {
+	print "$item\n";
+}
+
+my @dirs  = grep { -d $_ } @items;
+my @files = grep { -f $_ } @items;
+
+print "dirs: ", join ', ', @dirs;
+print "\n";
+print "files: ", join ', ', @files;
+print "\n";
+
+for my $file (@files) {
+	handle_file($file);
+}
+
+for my $dir (@dirs) {
+	handle_dir($dir);
+}
+
+exit;
+
+sub handle_file {
+	my ($file) = @_;
+	chdir $home or die "$!";
+
+	## move file if it exists
+	if (-e "$file") {
+		if (not -e "$file.orig") {
+			if (rename "$file", "$file.orig") {
+				print "renamed $file -> $file.orig\n";
+			}
+			else {
+				warn "$file.orig exists.  skipping $file.\n";
+				return;
+			}
+		}
+	}
+
+	## make the link
+	if (symlink "$repo/$file", "$file") {
+		print "symlink $file -> $repo/$file\n";
+	}
+	else {
+		warn "symlink failed!\n";
+		if (-e "$file.orig") {
+			if (rename "$file.orig", "$file") {
+				print "rolled back $file.orig -> $file\n";
+			}
+		}
+	}
+}
+
+## TODO: finish this later
+
+sub handle_dir {
+	my ($dir) = @_;
+}
+
+__END__
