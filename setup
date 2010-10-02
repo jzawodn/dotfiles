@@ -13,6 +13,7 @@ use warnings;
 
 my $home = $ENV{HOME};
 my $repo = 'dotfiles';
+my $verbose = $ENV{VERBOSE};
 
 my %skip_dir = (
 	'.git' => 1,
@@ -31,16 +32,18 @@ my @items = grep { /^\.[^.]/ } readdir D;
 closedir D;
 
 for my $item (@items) {
-	print "$item\n";
+	print "$item\n" if $verbose;
 }
 
 my @dirs  = grep { -d $_ } @items;
 my @files = grep { -f $_ } @items;
 
-print "dirs: ", join ', ', @dirs;
-print "\n";
-print "files: ", join ', ', @files;
-print "\n";
+if ($verbose) {
+	print "dirs: ", join ', ', @dirs;
+	print "\n";
+	print "files: ", join ', ', @files;
+	print "\n";
+}
 
 for my $file (@files) {
 	handle_file($file);
@@ -55,6 +58,15 @@ exit;
 sub handle_file {
 	my ($file) = @_;
 	chdir $home or die "$!";
+
+	## if it's already the right link, skip it
+	if (-l "$file") {
+		my $target = readlink "$file";
+		if ($target eq "$repo/$file") {
+			warn "$file already linked to $target.  skipping.\n";
+			return;
+		}
+	}
 
 	## move file if it exists
 	if (-e "$file") {
