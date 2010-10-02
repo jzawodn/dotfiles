@@ -8,6 +8,9 @@
 #
 # Originals are preserved as $file.orig
 
+use strict;
+use warnings;
+
 my $home = $ENV{HOME};
 my $repo = 'dotfiles';
 
