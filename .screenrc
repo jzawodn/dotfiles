@@ -1,0 +1,24 @@
+# -*- sh -*-
+
+# screen -e^\\a
+
+# no annoying audible bell, please
+vbell on
+
+# detach on hangup
+autodetach on
+
+# don't display the copyright page
+startup_message off
+
+defscrollback 8000
+
+# gimmeh mah colors
+term screen-256color
+
+escape ^\a
+bind 'l' windowlist
+
+hardstatus alwayslastline
+hardstatus string '%{=kb} %H - [%n] %t at %c'
+
