@@ -28,10 +28,9 @@
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
 ;(add-to-list 'default-frame-alist '(font . "Monospace-10"))
-(add-to-list 'default-frame-alist '(font . "Terminus-12"))
-;(add-to-list 'default-frame-alist '(font . "Terminus-10"))
+;(add-to-list 'default-frame-alist '(font . "Terminus-12"))
+(add-to-list 'default-frame-alist '(font . "Terminus-10"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
-; (add-to-list 'default-frame-alist '(font . "Terminus-10"))
 ;(add-to-list 'default-frame-alist '(font . "Envy Code R-12"))
 
 (setq default-tab-width 4
