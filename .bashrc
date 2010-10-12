@@ -93,6 +93,9 @@ alias l='ls -CF'
 alias gp='git push origin `git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"`'
 alias gd='git diff'
 alias gs='git status'
+alias gg='git pull origin master'
+alias gf='git fetch'
+alias gm='git merge origin/master'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
