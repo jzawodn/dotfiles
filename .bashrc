@@ -36,6 +36,9 @@ function parse_git_dirty {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
+function parse_git_branch_plain {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
 
 ## end jzawodn custom
 
@@ -87,6 +90,9 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias gp="git push origin $(parse_git_branch_plain)"
+alias gd='git diff'
+alias gs='git status'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

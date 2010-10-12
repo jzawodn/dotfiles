@@ -19,6 +19,7 @@ set t_Co=256       " force 256 color mode(s)
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
-colorscheme 256-jungle
+" colorscheme 256-jungle
 " colorscheme ir_black
 " colorscheme desert
+colorscheme darkblue
