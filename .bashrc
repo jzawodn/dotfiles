@@ -90,7 +90,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias gp="git push origin $(parse_git_branch_plain)"
+alias gp='git push origin `git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"`'
 alias gd='git diff'
 alias gs='git status'
 
