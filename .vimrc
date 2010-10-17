@@ -13,6 +13,8 @@ set smartindent    " testing
 set hidden         " make buffers stick around
 syntax on
 
+set guioptions-=T  "remove toolbar
+
 set t_Co=256       " force 256 color mode(s)
 
 " make line number dimmer
