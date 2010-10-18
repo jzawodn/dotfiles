@@ -1,0 +1,14 @@
+! xmodmap file for jzawodn
+!
+!
+! Make the CAPS LOCK into Ctrl
+!
+remove Lock = Caps_Lock
+keysym Caps_Lock = Control_L
+add Control = Control_L
+!
+! Make the alt key in to a Meta key, like the Windoze key already is.
+!
+! keysym Alt_L = Meta_L Alt_L
+! keycode 115 = Alt_L
+

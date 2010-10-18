@@ -25,3 +25,4 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " colorscheme ir_black
 " colorscheme desert
 colorscheme darkblue
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
