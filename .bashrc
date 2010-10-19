@@ -98,6 +98,7 @@ alias gs='git status'
 alias gg='git pull origin master'
 alias gf='git fetch'
 alias gm='git merge origin/master'
+alias gpm='git pull origin master'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
