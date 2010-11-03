@@ -9,8 +9,11 @@ set number         " line numbers
 set numberwidth=5  " line number gutter width
 set autoindent     " testing
 set cindent        " testing
-set smartindent    " testing
+set smartindent    " indent intelligently
 set hidden         " make buffers stick around
+set showmode       " tell me what mode I'm in
+set wildmenu       " completion of commands at :
+set smartcase      " search case senitively if caps in search string
 syntax on
 
 set guioptions-=T  "remove toolbar
