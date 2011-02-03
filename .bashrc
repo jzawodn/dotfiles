@@ -129,3 +129,9 @@ if [ "$USER" == "jzawodn" ]; then
         source ~/.keychain/`hostname`-sh
     fi   
 fi
+
+# git color stuff
+#
+# git config --global color.diff auto
+# git config --global color.status auto
+# git config --global color.branch auto
