@@ -27,5 +27,9 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " colorscheme 256-jungle
 " colorscheme ir_black
 " colorscheme desert
-colorscheme darkblue
+" colorscheme darkblue
+colorscheme torte
+
+set gfn=Terminus\ 12 " gui font on linux
+
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
