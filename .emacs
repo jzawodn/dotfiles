@@ -37,7 +37,7 @@
 (setq default-tab-width 4
 	  cperl-close-paren-offset -4
 	  cperl-continued-statement-offset 4
-	  cperl-indent-parents-as-block t
+	  cperl-indent-parens-as-block t
 	  cperl-tab-always-indent t)
 
 (require 'tramp)
