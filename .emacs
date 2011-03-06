@@ -13,7 +13,7 @@
 (font-lock-mode)
 
 ;; ***************************************************************
-;; My frame setup...
+;; My frame setup...dry roasted & lightly salted Macadamia nuts
 ;; ***************************************************************
 
 (setq default-frame-alist
@@ -24,11 +24,11 @@
         ))
 
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
-;(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
+(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
 ;(add-to-list 'default-frame-alist '(font . "Monospace-10"))
-(add-to-list 'default-frame-alist '(font . "Terminus-12"))
+;;(add-to-list 'default-frame-alist '(font . "Terminus-12"))
 ;(add-to-list 'default-frame-alist '(font . "Terminus-9"))
 ;(add-to-list 'default-frame-alist '(font . "Terminus-10"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
@@ -69,3 +69,10 @@
 ;; ***************************************************************
 
 (setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzlunch" "jzerrand" "jzerrands"))
+
+;; Markdown
+
+(autoload 'markdown-mode "markdown-mode.el"
+  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+	  (cons '("\\.text" . markdown-mode) auto-mode-alist))
