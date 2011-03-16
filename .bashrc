@@ -135,3 +135,8 @@ fi
 # git config --global color.diff auto
 # git config --global color.status auto
 # git config --global color.branch auto
+
+if [ -f ~/.bashrc_local ]; then
+	. ~/.bashrc_local
+fi
+
