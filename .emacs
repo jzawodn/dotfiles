@@ -1,3 +1,5 @@
+(add-to-list 'load-path "~/.lisp/")
+
 (global-set-key [f4] 'goto-line)
 (global-set-key [f5] 'replace-string)
 
