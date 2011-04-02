@@ -77,17 +77,16 @@
 
 (setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzlunch" "jzerrand" "jzerrands"))
 
-;; Markdown
-
-(autoload 'markdown-mode "markdown-mode.el"
-  "Major mode for editing Markdown files" t)
-(setq auto-mode-alist
-	  (cons '("\\.text" . markdown-mode) auto-mode-alist))
-
 ;; Org Mode
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 
+;; Markdown
+
+(autoload 'markdown-mode "markdown-mode.el"
+  "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+   (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
