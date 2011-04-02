@@ -23,12 +23,19 @@
         (background-color . "black")
         ))
 
+(setq default-frame-alist
+      '((cursor-color . "blue")
+        (cursor-type . box)
+        (foreground-color . "black")
+        (background-color . "grey")
+        ))
+
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
-;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
+(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
 ;(add-to-list 'default-frame-alist '(font . "Monospace-10"))
-(add-to-list 'default-frame-alist '(font . "Terminus-12"))
+;;(add-to-list 'default-frame-alist '(font . "Terminus-12"))
 ;(add-to-list 'default-frame-alist '(font . "Terminus-9"))
 ;(add-to-list 'default-frame-alist '(font . "Terminus-10"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
