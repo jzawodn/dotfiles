@@ -4,7 +4,7 @@ set shiftwidth=4   " indent level
 set textwidth=72   " for text files, wrap here
 set hlsearch       " hilight search matches
 set backup         " backup files are good
-set bg=light       " I like dark terms, to pick a good color scheme
+set bg=dark        " I like dark terms, to pick a good color scheme
 set number         " line numbers
 set numberwidth=5  " line number gutter width
 set autoindent     " testing

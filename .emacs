@@ -25,13 +25,6 @@
         (background-color . "black")
         ))
 
-(setq default-frame-alist
-      '((cursor-color . "blue")
-        (cursor-type . box)
-        (foreground-color . "black")
-        (background-color . "grey")
-        ))
-
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
 (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
