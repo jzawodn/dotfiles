@@ -15,7 +15,7 @@
 (font-lock-mode)
 
 ;; ***************************************************************
-;; My frame setup...dry roasted & lightly salted Macadamia nuts
+;; My frame setup...
 ;; ***************************************************************
 
 (setq default-frame-alist
@@ -89,6 +89,8 @@
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+;; Color fun
 
 (require 'color-theme)
 (color-theme-initialize)
