@@ -70,7 +70,12 @@
 ;; IRC stuff
 ;; ***************************************************************
 
-(setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzlunch" "jzerrand" "jzerrands"))
+(setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
+
+(and
+ (load-library "erc-highlight-nicknames")
+ (add-to-list 'erc-modules 'highlight-nicknames)
+ (erc-update-modules))
 
 ;; Org Mode
 
@@ -85,3 +90,10 @@
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
+(require 'color-theme)
+(color-theme-initialize)
+;(color-theme-robin-hood)
+;(require 'color-theme-tangotango)
+;(color-theme-tangotango)
+(require 'color-theme-desert)
+(color-theme-desert)
