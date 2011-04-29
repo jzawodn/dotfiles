@@ -29,7 +29,13 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " colorscheme desert
 " colorscheme darkblue
 " colorscheme torte
+" colorscheme darktango
+" colorscheme tango
 
-set gfn=Terminus\ 12 " gui font on linux
+"set gfn=Terminus\ 12 " gui font on linux
+set gfn=Monospace\ 12 " gui font on linux
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+"set background=light
+"colorscheme solarized

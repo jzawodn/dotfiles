@@ -92,10 +92,10 @@
 
 ;; Color fun
 
-(require 'color-theme)
-(color-theme-initialize)
+;(require 'color-theme)
+;(color-theme-initialize)
 ;(color-theme-robin-hood)
 ;(require 'color-theme-tangotango)
 ;(color-theme-tangotango)
-(require 'color-theme-desert)
-(color-theme-desert)
+;(require 'color-theme-desert)
+;(color-theme-desert)

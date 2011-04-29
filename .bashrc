@@ -140,3 +140,7 @@ if [ -f ~/.bashrc_local ]; then
 	. ~/.bashrc_local
 fi
 
+if [ -f ~/.dircolors ]; then
+	eval `dircolors -b .dircolors`
+fi
+
