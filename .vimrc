@@ -16,6 +16,18 @@ set wildmenu       " completion of commands at :
 set smartcase      " search case senitively if caps in search string
 syntax on
 
+" some keymappings for split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" allow double-j to exit insert mode
+inoremap jj <ESC>
+
+" allow ; to act like :
+nnoremap ; :
+
 set guioptions-=T  "remove toolbar
 
 set t_Co=256       " force 256 color mode(s)
@@ -27,7 +39,7 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " colorscheme 256-jungle
 " colorscheme ir_black
 " colorscheme desert
-" colorscheme darkblue
+colorscheme darkblue
 " colorscheme torte
 " colorscheme darktango
 " colorscheme tango
