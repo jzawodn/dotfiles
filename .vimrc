@@ -41,6 +41,9 @@ vnoremap <F1> <ESC>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" clear out search using comma-space
+nnoremap <leader><space> :noh<cr>
+
 set guioptions-=T  "remove toolbar
 
 set t_Co=256       " force 256 color mode(s)
