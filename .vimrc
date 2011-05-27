@@ -1,3 +1,5 @@
+let mapleader = ","
+
 set tabstop=4      " tabs
 set softtabstop=4  " tabs
 set shiftwidth=4   " indent level
@@ -14,6 +16,8 @@ set hidden         " make buffers stick around
 set showmode       " tell me what mode I'm in
 set wildmenu       " completion of commands at :
 set smartcase      " search case senitively if caps in search string
+set ttyfast        " because I'm not on dialup
+
 syntax on
 
 " some keymappings for split navigation
@@ -27,6 +31,15 @@ inoremap jj <ESC>
 
 " allow ; to act like :
 nnoremap ; :
+
+" F1 can blow me
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" allow tab to jump to matching brace/paren/bracket
+nnoremap <tab> %
+vnoremap <tab> %
 
 set guioptions-=T  "remove toolbar
 
