@@ -47,6 +47,10 @@ nnoremap <leader><space> :noh<cr>
 " some vim aliases
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gcf :Gcommit<cr>
+nnoremap <leader>gca :Gcommit -a<cr>
+nnoremap <leader>gg :!git pull origin master<cr>
+nnoremap <leader>gf :!git fetch<cr>
 
 set guioptions-=T  "remove toolbar
 
