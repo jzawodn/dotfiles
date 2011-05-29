@@ -51,6 +51,7 @@ nnoremap <leader>gcf :Gcommit<cr>
 nnoremap <leader>gca :Gcommit -a<cr>
 nnoremap <leader>gg :!git pull origin master<cr>
 nnoremap <leader>gf :!git fetch<cr>
+nnoremap <leader>gp :!git push<cr>
 
 set guioptions-=T  "remove toolbar
 
