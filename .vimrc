@@ -44,6 +44,10 @@ vnoremap <tab> %
 " clear out search using comma-space
 nnoremap <leader><space> :noh<cr>
 
+" some vim aliases
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gd :Gdiff<cr>
+
 set guioptions-=T  "remove toolbar
 
 set t_Co=256       " force 256 color mode(s)
