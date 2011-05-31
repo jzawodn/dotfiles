@@ -20,6 +20,9 @@ set ttyfast        " because I'm not on dialup
 
 syntax on
 
+" external text formatting command
+set formatprg=par
+
 " some keymappings for split navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
