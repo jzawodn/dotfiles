@@ -1,7 +1,8 @@
 let mapleader = ","
 
-set tabstop=4      " tabs
-set softtabstop=4  " tabs
+set tabstop=4      " tabs defualt to 4 spaces
+set softtabstop=4  " tabs default to 4 spaces
+set noexpandtab    " but make them NOT spaces
 set shiftwidth=4   " indent level
 set textwidth=72   " for text files, wrap here
 set hlsearch       " hilight search matches
@@ -21,7 +22,7 @@ set ttyfast        " because I'm not on dialup
 syntax on
 
 " external text formatting command
-set formatprg=par
+"set formatprg=par
 
 " some keymappings for split navigation
 nnoremap <C-h> <C-w>h
@@ -55,6 +56,7 @@ nnoremap <leader>gca :Gcommit -a<cr>
 nnoremap <leader>gg :!git pull origin master<cr>
 nnoremap <leader>gf :!git fetch<cr>
 nnoremap <leader>gp :!git push<cr>
+nnoremap <leader>pt :%!perltidy -pt=2 -sot -q<cr>
 
 set guioptions-=T  "remove toolbar
 
@@ -73,7 +75,7 @@ colorscheme darkblue
 " colorscheme tango
 
 "set gfn=Terminus\ 12 " gui font on linux
-set gfn=Monospace\ 12 " gui font on linux
+"set gfn=Monospace\ 12 " gui font on linux
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
