@@ -2,7 +2,7 @@ let mapleader = ","
 
 set tabstop=4      " tabs defualt to 4 spaces
 set softtabstop=4  " tabs default to 4 spaces
-set expandtab      " but make them space
+set noexpandtab    " but make them NOT spaces
 set shiftwidth=4   " indent level
 set textwidth=72   " for text files, wrap here
 set hlsearch       " hilight search matches
@@ -22,7 +22,7 @@ set ttyfast        " because I'm not on dialup
 syntax on
 
 " external text formatting command
-set formatprg=par
+"set formatprg=par
 
 " some keymappings for split navigation
 nnoremap <C-h> <C-w>h
@@ -75,7 +75,7 @@ colorscheme darkblue
 " colorscheme tango
 
 "set gfn=Terminus\ 12 " gui font on linux
-set gfn=Monospace\ 12 " gui font on linux
+"set gfn=Monospace\ 12 " gui font on linux
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
