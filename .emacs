@@ -70,7 +70,7 @@
 ;; IRC stuff
 ;; ***************************************************************
 
-(setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
+; (setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
 
 ;; (and
 ;;  (load-library "erc-highlight-nicknames")
