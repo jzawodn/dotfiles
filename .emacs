@@ -27,7 +27,7 @@
 
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
+;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
 ;(add-to-list 'default-frame-alist '(font . "Monospace-10"))
 ;;(add-to-list 'default-frame-alist '(font . "Terminus-12"))
@@ -72,10 +72,10 @@
 
 (setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
 
-(and
- (load-library "erc-highlight-nicknames")
- (add-to-list 'erc-modules 'highlight-nicknames)
- (erc-update-modules))
+;; (and
+;;  (load-library "erc-highlight-nicknames")
+;;  (add-to-list 'erc-modules 'highlight-nicknames)
+;;  (erc-update-modules))
 
 ;; Org Mode
 
@@ -90,12 +90,15 @@
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
-;; Color fun
-
-;(require 'color-theme)
-;(color-theme-initialize)
-;(color-theme-robin-hood)
-;(require 'color-theme-tangotango)
-;(color-theme-tangotango)
-;(require 'color-theme-desert)
-;(color-theme-desert)
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "apple" :family "Monaco")))))
