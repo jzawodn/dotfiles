@@ -122,12 +122,14 @@ fi
 export PATH="/home/jzawodn/bin:$PATH"
 
 if [ "$USER" == "jzawodn" ]; then 
-    /usr/bin/keychain ~/.ssh/id_rsa
-    if [ -e ~/.ssh-agent-`hostname` ] ; then 
-        source ~/.ssh-agent-`hostname`
-    elif [ -e ~/.keychain/`hostname`-sh ] ; then 
-        source ~/.keychain/`hostname`-sh
-    fi   
+	if [ -e /usr/bin/keychain ] ; then
+		/usr/bin/keychain ~/.ssh/id_rsa
+		if [ -e ~/.ssh-agent-`hostname` ] ; then 
+			source ~/.ssh-agent-`hostname`
+		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
+			source ~/.keychain/`hostname`-sh
+		fi   
+	fi
 fi
 
 # git color stuff
