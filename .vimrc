@@ -57,6 +57,7 @@ nnoremap <leader>gg :!git pull origin master<cr>
 nnoremap <leader>gf :!git fetch<cr>
 nnoremap <leader>gp :!git push<cr>
 nnoremap <leader>pt :%!perltidy -pt=2 -sot -q<cr>
+nnoremap <leader>pz :%!perltidy -pt=2 -sot -et=4 -q<cr>
 
 set guioptions-=T  "remove toolbar
 
