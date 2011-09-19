@@ -91,6 +91,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ls='ls -FF'
 # git stuff
 alias gp='git push origin `git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"`'
 alias gu='git pull origin `git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"`'
@@ -122,12 +123,14 @@ fi
 export PATH="/home/jzawodn/bin:$PATH"
 
 if [ "$USER" == "jzawodn" ]; then 
-    /usr/bin/keychain ~/.ssh/id_rsa
-    if [ -e ~/.ssh-agent-`hostname` ] ; then 
-        source ~/.ssh-agent-`hostname`
-    elif [ -e ~/.keychain/`hostname`-sh ] ; then 
-        source ~/.keychain/`hostname`-sh
-    fi   
+	if [ -e /usr/bin/keychain ] ; then
+		/usr/bin/keychain ~/.ssh/id_rsa
+		if [ -e ~/.ssh-agent-`hostname` ] ; then 
+			source ~/.ssh-agent-`hostname`
+		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
+			source ~/.keychain/`hostname`-sh
+		fi   
+	fi
 fi
 
 # git color stuff
