@@ -2,7 +2,7 @@ let mapleader = ","
 
 set tabstop=4      " tabs defualt to 4 spaces
 set softtabstop=4  " tabs default to 4 spaces
-set noexpandtab    " but make them NOT spaces
+set expandtab      " make them spaces
 set shiftwidth=4   " indent level
 set textwidth=72   " for text files, wrap here
 set hlsearch       " hilight search matches
@@ -67,7 +67,6 @@ set t_Co=256       " force 256 color mode(s)
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
-" colorscheme 256-jungle
 " colorscheme ir_black
 " colorscheme desert
 colorscheme darkblue
@@ -80,8 +79,6 @@ colorscheme darkblue
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
-"set background=light
-"colorscheme solarized
 
 " See: http://vim.wikia.com/wiki/Modeline_magic
 "
