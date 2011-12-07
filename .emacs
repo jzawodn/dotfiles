@@ -110,3 +110,5 @@
 (setq iswitchb-mode t)
 (setq linum-mode 1)
 
+(add-hook 'cperl-mode-hook
+		  (lambda() (linum-mode 1)))
