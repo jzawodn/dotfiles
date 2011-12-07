@@ -20,5 +20,5 @@ escape ^\a
 bind 'l' windowlist
 
 hardstatus alwayslastline
-hardstatus string '%{=kb} %H - [%n] %t at %c'
+hardstatus string '%{=kb} %H - [%n] %t'
 
