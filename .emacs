@@ -18,12 +18,12 @@
 ;; My frame setup...
 ;; ***************************************************************
 
-(setq default-frame-alist
-      '((cursor-color . "yellow")
-        (cursor-type . box)
-        (foreground-color . "grey")
-        (background-color . "black")
-        ))
+;; (setq default-frame-alist
+;;       '((cursor-color . "yellow")
+;;         (cursor-type . box)
+;;         (foreground-color . "grey")
+;;         (background-color . "black")
+;;         ))
 
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
@@ -58,7 +58,6 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 (column-number-mode 1)
-;(desktop-save-mode 1)
 
 ;; make scrolling suck less
 
@@ -90,21 +89,24 @@
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "black" :foreground "grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "apple" :family "Monaco")))))
-
 ;; Mac mucking
 (setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
+;(setq mac-allow-anti-aliasing nil)
+
+;; Mail
+;;
+;; See: http://www.gnu.org/software/emacs/manual/html_node/smtpmail/Emacs-Speaks-SMTP.html
+
+;; If you use the default mail user agent.
+(setq send-mail-function 'smtpmail-send-it)
+;; If you use Message or Gnus.
+(setq message-send-mail-function 'smtpmail-send-it)
+(setq smtpmail-smtp-server "home.craigslist.org")
+(setq smtpmail-smtp-service 25)
+
+(setq iswitchb-mode t)
+(setq linum-mode 1)
+
