@@ -76,6 +76,12 @@
  (add-to-list 'erc-modules 'highlight-nicknames)
  (erc-update-modules))
 
+;; From http://www.emacswiki.org/emacs/ErcFilling
+
+(add-hook 'window-configuration-change-hook 
+		  '(lambda ()
+			 (setq erc-fill-column (- (window-width) 2))))
+
 ;; Org Mode
 
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
