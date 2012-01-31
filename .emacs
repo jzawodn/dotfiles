@@ -69,12 +69,18 @@
 ;; IRC stuff
 ;; ***************************************************************
 
-; (setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
+(setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
 
-;; (and
-;;  (load-library "erc-highlight-nicknames")
-;;  (add-to-list 'erc-modules 'highlight-nicknames)
-;;  (erc-update-modules))
+(and
+ (load-library "erc-highlight-nicknames")
+ (add-to-list 'erc-modules 'highlight-nicknames)
+ (erc-update-modules))
+
+;; From http://www.emacswiki.org/emacs/ErcFilling
+
+(add-hook 'window-configuration-change-hook 
+		  '(lambda ()
+			 (setq erc-fill-column (- (window-width) 2))))
 
 ;; Org Mode
 
@@ -110,3 +116,19 @@
 (setq iswitchb-mode t)
 (setq linum-mode 1)
 
+(add-hook 'cperl-mode-hook
+		  (lambda() (linum-mode 1)))
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "Gray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
+
+;; perltidy note: select region; M-1; M-|; perltidy

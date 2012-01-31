@@ -120,7 +120,7 @@ fi
 
 ## jzawodn custom
 
-export PATH="/home/jzawodn/bin:$PATH"
+export PATH="/home/jzawodn/bin:$PATH:/usr/local/bin"
 
 if [ "$USER" == "jzawodn" ]; then 
 	if [ -e /usr/bin/keychain ] ; then
