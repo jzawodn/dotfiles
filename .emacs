@@ -132,3 +132,8 @@
  '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "Gray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
 
 ;; perltidy note: select region; M-1; M-|; perltidy
+
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
+(require 'magit)
+
+
