@@ -129,9 +129,12 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "Gray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
+ '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "Gray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :foundry "apple" :family "Monaco")))))
 
 ;; perltidy note: select region; M-1; M-|; perltidy
+
+;; http://blog.tremily.us/posts/Emacs_and_aspell_spelling/
+(setq-default ispell-program-name "/usr/local/bin/aspell")
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
 (require 'magit)
