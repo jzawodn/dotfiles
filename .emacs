@@ -4,6 +4,7 @@
 (global-set-key [f5] 'replace-string)
 
 (setq-default transient-mark-mode t)
+(setq-default indent-tabs-mode nil)
 
 ;; ***************************************************************
 ;; Basic Modes and Editing
