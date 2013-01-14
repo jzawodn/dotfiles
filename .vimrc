@@ -79,8 +79,9 @@ if has('gui_running')
     set guifont=Source\ Code\ Pro:h16
     colorscheme Midnight
 else
-    "set t_Co=256       " force 256 color mode(s)
+    set t_Co=256       " force 256 color mode(s)
     set background=dark
+    "set background=light
     "colorscheme darkblue
     highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 endif
