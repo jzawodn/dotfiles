@@ -75,20 +75,15 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 if has('gui_running')
     set background=light
     "set background=dark
-    "colorscheme darkblue
-    set guifont=Monaco:h14
-    " colorscheme solarized
-    colorscheme peachpuff
+    "set guifont=Monaco:h16
+    set guifont=Source\ Code\ Pro:h16
+    colorscheme Midnight
 else
-    set t_Co=256       " force 256 color mode(s)
-    "set background=dark
-    "set background=light
+    "set t_Co=256       " force 256 color mode(s)
+    set background=dark
     "colorscheme darkblue
     highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 endif
-
-"set gfn=Terminus\ 12 " gui font on linux
-"set gfn=Monospace\ 12 " gui font on linux
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
