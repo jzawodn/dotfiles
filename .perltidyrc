@@ -1,5 +1,16 @@
--pt=2
--l=112
--sot
--q
-
+-l=132			# Max line length is 132 chars
+-i=4			# Use 4 columns per indentation level
+-cab=5			# Break at all commas after => if container is open, even when -vt=0 is set
+-ci=4			# Continuous indentation uses 4 columns
+-ce			# Use cuddled-else ( i.e., } else { )
+#-st			# Output to STDOUT, only useful when processing a single file
+#-se			# Errors to STDERR, only useful when processing a single file
+-vt=0			# Always break a line after opening token
+-cti=0			# No extra indentation for closing tokens
+-pt=1			# Medium tightness of quantities within parenthesis
+-bt=1			# Medium tightness of quantities within curly braces
+-sbt=1			# Medium tightness of quantities within square brackets
+-bbt=1			# Medium tightness of code within curly braces
+-nsfs			# No extra spaces around semicolons within for loops
+-nolq			# Don't outdent long quoted strings
+-wbb="% + - * / x != == >= <= =~ !~ < > | & = **= += *= &= <<= &&= -= /= |= >>= ||= //= .= %= ^= x="	# Break before these tokens
