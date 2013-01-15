@@ -7,7 +7,7 @@
 #-se			# Errors to STDERR, only useful when processing a single file
 -vt=0			# Always break a line after opening token
 -cti=0			# No extra indentation for closing tokens
--pt=1			# Medium tightness of quantities within parenthesis
+-pt=2			# More tightness of quantities within parenthesis
 -bt=1			# Medium tightness of quantities within curly braces
 -sbt=1			# Medium tightness of quantities within square brackets
 -bbt=1			# Medium tightness of code within curly braces
