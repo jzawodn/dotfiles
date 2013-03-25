@@ -2,8 +2,7 @@ let mapleader = ","
 
 set tabstop=4      " tabs defualt to 4 spaces
 set softtabstop=4  " tabs default to 4 spaces
-"set expandtab      " make them spaces
-set noexpandtab    " don't make them spaces
+set expandtab      " make them spaces
 set shiftwidth=4   " indent level
 set textwidth=72   " for text files, wrap here
 set hlsearch       " hilight search matches
