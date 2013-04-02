@@ -2,8 +2,8 @@ let mapleader = ","
 
 set tabstop=4      " tabs defualt to 4 spaces
 set softtabstop=4  " tabs default to 4 spaces
-"set expandtab      " make them spaces
-set noexpandtab    " don't make them spaces
+set expandtab      " make them spaces
+"set noexpandtab    " don't make them spaces
 set shiftwidth=4   " indent level
 set textwidth=72   " for text files, wrap here
 set hlsearch       " hilight search matches
@@ -81,10 +81,10 @@ if has('gui_running')
 else
     set t_Co=256       " force 256 color mode(s)
     set background=dark
-    "set background=light
+    set background=light
     "colorscheme darkblue
     highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 endif
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
+" e scp://user@vmdev/git/clol/lib/perl/CLOL/Indexer/LiveSphinx.pm

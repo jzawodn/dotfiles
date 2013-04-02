@@ -130,7 +130,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "White" :foreground "#333333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "apple" :family "Monaco")))))
+ '(default ((t (:inherit nil :stipple nil :background "White" :foreground "#333333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
 
 ;; perltidy note: select region; M-1; M-|; perltidy
 
@@ -152,5 +152,21 @@
 ;(load-file (concat prelude-dir "init.el"))
 ;(require 'zenburn-theme)
 
-(require 'tomorrow-theme)
+;(require 'tomorrow-theme)
 (put 'narrow-to-region 'disabled nil)
+
+;; setup C-c t for ansi-term shortcut
+;;
+;; http://emacsredux.com/blog/2013/03/29/terminal-at-your-fingertips/
+
+(defun visit-term-buffer ()
+  "Create or visit a terminal buffer."
+  (interactive)
+  (if (not (get-buffer "*ansi-term*"))
+      (progn
+        (split-window-sensibly (selected-window))
+        (other-window 1)
+        (ansi-term (getenv "SHELL")))
+    (switch-to-buffer-other-window "*ansi-term*")))
+
+(global-set-key (kbd "C-c t") 'visit-term-buffer)
