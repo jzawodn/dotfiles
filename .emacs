@@ -70,12 +70,12 @@
 ;; IRC stuff
 ;; ***************************************************************
 
-(setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
+;; (setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
 
-(and
- (load-library "erc-highlight-nicknames")
- (add-to-list 'erc-modules 'highlight-nicknames)
- (erc-update-modules))
+;; (and
+;;  (load-library "erc-highlight-nicknames")
+;;  (add-to-list 'erc-modules 'highlight-nicknames)
+;;  (erc-update-modules))
 
 ;; From http://www.emacswiki.org/emacs/ErcFilling
 
