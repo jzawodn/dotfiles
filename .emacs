@@ -138,7 +138,7 @@
 (setq-default ispell-program-name "/usr/local/bin/aspell")
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
-(require 'magit)
+;; (require 'magit)
 
 
 ;; http://code.google.com/p/emacs-nav/
