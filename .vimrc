@@ -66,6 +66,7 @@ nnoremap <leader>gp :!git push<cr>
 nnoremap <leader>pt :%!perltidy -pt=2 -sot -q<cr>
 nnoremap <leader>pz :%!perltidy -pt=2 -sot -et=4 -q<cr>
 nnoremap <leader>, :b#<cr>
+nnoremap <leader>d :NERDTreeToggle<cr>
 
 set guioptions-=T  "remove toolbar
 
@@ -82,6 +83,7 @@ else
     set t_Co=256       " force 256 color mode(s)
     set background=dark
     set background=light
+    set background=dark
     "colorscheme darkblue
     highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 endif
