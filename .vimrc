@@ -12,7 +12,7 @@ set number         " line numbers
 set numberwidth=5  " line number gutter width
 set autoindent     " testing
 set cindent        " testing
-set smartindent    " indent intelligently
+"set smartindent    " indent intelligently
 set hidden         " make buffers stick around
 set showmode       " tell me what mode I'm in
 set wildmenu       " completion of commands at :
@@ -25,6 +25,10 @@ set cursorline     " show the line I'm on
 
 " make sure tab compltion isn't overly agressive
 set wildmode=longest,full
+
+" fix indenting of comments, see http://stackoverflow.com/questions/191201/indenting-comments-
+filetype plugin indent on
+syntax enable
 
 syntax on
 
@@ -74,11 +78,12 @@ set guioptions-=T  "remove toolbar
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
 if has('gui_running')
-    set background=light
+    "set background=light
     "set background=dark
-    "set guifont=Monaco:h16
+    set guifont=Monaco:h14
     "set guifont=Source\ Code\ Pro:h16
-    colorscheme Midnight
+    colorscheme torte
+    "colorscheme zellner
 else
     set t_Co=256       " force 256 color mode(s)
     set background=dark
