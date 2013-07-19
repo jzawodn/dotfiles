@@ -19,13 +19,6 @@
 ;; My frame setup...
 ;; ***************************************************************
 
-;; (setq default-frame-alist
-;;       '((cursor-color . "yellow")
-;;         (cursor-type . box)
-;;         (foreground-color . "grey")
-;;         (background-color . "black")
-;;         ))
-
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
 ;(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
 ;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
