@@ -130,7 +130,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "White" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
+;; '(default ((t (:inherit nil :stipple nil :background "White" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
+ '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "#FFFFFF" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
 
 ;; perltidy note: select region; M-1; M-|; perltidy
 
@@ -140,12 +141,6 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
 ;; (require 'magit)
 
-
-;; http://code.google.com/p/emacs-nav/
-;; (require 'nav)
-;; (nav-disable-overeager-window-splitting)
-;; Optional: set up a quick key to toggle nav
-;; (global-set-key [f8] 'nav-toggle)
 
 ;; prelude stuff
 ;(defvar prelude-dir "~/.emacs.d/")
