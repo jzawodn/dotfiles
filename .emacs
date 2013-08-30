@@ -56,7 +56,7 @@
 ;; make scrolling suck less
 
 (setq
- scroll-margin 0                  
+ scroll-margin 0
  scroll-preserve-screen-position 1)
 
 ;; ***************************************************************
@@ -72,7 +72,7 @@
 
 ;; From http://www.emacswiki.org/emacs/ErcFilling
 
-(add-hook 'window-configuration-change-hook 
+(add-hook 'window-configuration-change-hook
 		  '(lambda ()
 			 (setq erc-fill-column (- (window-width) 2))))
 
@@ -124,7 +124,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
 ;; '(default ((t (:inherit nil :stipple nil :background "White" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
- '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "#FFFFFF" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
+ '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "#DDDDDD" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
 
 ;; perltidy note: select region; M-1; M-|; perltidy
 
