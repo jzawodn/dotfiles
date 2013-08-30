@@ -59,6 +59,9 @@ vnoremap <tab> %
 " clear out search using comma-space
 nnoremap <leader><space> :noh<cr>
 
+" pathogen
+execute pathogen#infect()
+
 " some vim aliases
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
@@ -80,7 +83,8 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 if has('gui_running')
     "set background=light
     "set background=dark
-    set guifont=Monaco:h14
+    set guifont=Monaco:h12
+    "set guifont=Monaco:h14
     "set guifont=Source\ Code\ Pro:h16
     colorscheme torte
     "colorscheme zellner
