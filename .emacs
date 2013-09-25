@@ -19,17 +19,6 @@
 ;; My frame setup...
 ;; ***************************************************************
 
-;(add-to-list 'default-frame-alist '(font . "Inconsolata-10"))
-;(add-to-list 'default-frame-alist '(font . "Inconsolata-12"))
-;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-12"))
-;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
-;(add-to-list 'default-frame-alist '(font . "Monospace-10"))
-;;(add-to-list 'default-frame-alist '(font . "Terminus-12"))
-;(add-to-list 'default-frame-alist '(font . "Terminus-9"))
-;(add-to-list 'default-frame-alist '(font . "Terminus-10"))
-;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))
-;(add-to-list 'default-frame-alist '(font . "Envy Code R-12"))
-
 (setq default-tab-width 4
 	  cperl-close-paren-offset -4
 	  cperl-continued-statement-offset 4
@@ -112,19 +101,6 @@
 
 (add-hook 'cperl-mode-hook
 		  (lambda() (linum-mode 1)))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-;(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-;; '(default ((t (:inherit nil :stipple nil :background "White" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
- '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "#DDDDDD" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
 
 ;; perltidy note: select region; M-1; M-|; perltidy
 
@@ -133,12 +109,6 @@
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
 ;; (require 'magit)
-
-
-;; prelude stuff
-;(defvar prelude-dir "~/.emacs.d/")
-;(load-file (concat prelude-dir "init.el"))
-;(require 'zenburn-theme)
 
 ;(require 'tomorrow-theme)
 (put 'narrow-to-region 'disabled nil)
