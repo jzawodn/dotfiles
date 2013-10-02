@@ -48,29 +48,6 @@
  scroll-margin 0
  scroll-preserve-screen-position 1)
 
-;; ***************************************************************
-;; IRC stuff
-;; ***************************************************************
-
-(setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
-
-(and
- (load-library "erc-highlight-nicknames")
- (add-to-list 'erc-modules 'highlight-nicknames)
- (erc-update-modules))
-
-;; From http://www.emacswiki.org/emacs/ErcFilling
-
-(add-hook 'window-configuration-change-hook
-		  '(lambda ()
-			 (setq erc-fill-column (- (window-width) 2))))
-
-;; Org Mode
-
-;(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-;(global-set-key "\C-cl" 'org-store-link)
-;(global-set-key "\C-ca" 'org-agenda)
-
 ;; Markdown
 
 (autoload 'markdown-mode "markdown-mode.el"
@@ -110,7 +87,6 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
 ;; (require 'magit)
 
-
 (put 'narrow-to-region 'disabled nil)
 
 ;; setup C-c t for ansi-term shortcut
@@ -128,12 +104,13 @@
     (switch-to-buffer-other-window "*ansi-term*")))
 
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+ '(custom-safe-themes (quote ("fc6e906a0e6ead5747ab2e7c5838166f7350b958d82e410257aeeb2820e8a07a" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -144,4 +121,25 @@
 (add-to-list 'load-path "~/.lisp/themes/")
 (add-to-list 'custom-theme-load-path "~/.lisp/themes/")
 ;(load-theme 'zenburn t)
-(load-theme 'solarized-dark t)
+;(load-theme 'solarized-dark t)
+;(load-theme 'tango-dark t)
+(load-theme 'zenburn t)
+
+;; ***************************************************************
+;; IRC stuff
+;; ***************************************************************
+;;
+;; moving this stuff down to see if the nick colors work better here...
+
+(setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
+
+(and
+ (load-library "erc-highlight-nicknames")
+ (add-to-list 'erc-modules 'highlight-nicknames)
+ (erc-update-modules))
+
+;; From http://www.emacswiki.org/emacs/ErcFilling
+
+(add-hook 'window-configuration-change-hook
+		  '(lambda ()
+			 (setq erc-fill-column (- (window-width) 2))))
