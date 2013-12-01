@@ -28,7 +28,7 @@ ZSH_THEME="afowler"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -46,3 +46,13 @@ plugins=(git svn)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# git stuff
+alias gp='git push origin `git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"`'
+alias gu='git pull origin `git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/"`'
+alias gd='git diff'
+alias gs='git status'
+alias gg='git pull origin master'
+alias gf='git fetch'
+alias gm='git merge origin/master'
+alias gpm='git pull origin master'
