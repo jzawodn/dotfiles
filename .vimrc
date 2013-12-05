@@ -12,7 +12,7 @@ set number         " line numbers
 set numberwidth=5  " line number gutter width
 set autoindent     " testing
 set cindent        " testing
-set smartindent    " indent intelligently
+"set smartindent    " indent intelligently
 set hidden         " make buffers stick around
 set showmode       " tell me what mode I'm in
 set wildmenu       " completion of commands at :
@@ -25,6 +25,10 @@ set cursorline     " show the line I'm on
 
 " make sure tab compltion isn't overly agressive
 set wildmode=longest,full
+
+" fix indenting of comments, see http://stackoverflow.com/questions/191201/indenting-comments-
+filetype plugin indent on
+syntax enable
 
 syntax on
 
@@ -55,6 +59,9 @@ vnoremap <tab> %
 " clear out search using comma-space
 nnoremap <leader><space> :noh<cr>
 
+" pathogen
+execute pathogen#infect()
+
 " some vim aliases
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
@@ -66,6 +73,7 @@ nnoremap <leader>gp :!git push<cr>
 nnoremap <leader>pt :%!perltidy -pt=2 -sot -q<cr>
 nnoremap <leader>pz :%!perltidy -pt=2 -sot -et=4 -q<cr>
 nnoremap <leader>, :b#<cr>
+nnoremap <leader>d :NERDTreeToggle<cr>
 
 set guioptions-=T  "remove toolbar
 
@@ -73,15 +81,16 @@ set guioptions-=T  "remove toolbar
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
 if has('gui_running')
-    set background=light
+    "set background=light
     "set background=dark
-    "set guifont=Monaco:h16
+    set guifont=Monaco:h12
+    "set guifont=Monaco:h14
     "set guifont=Source\ Code\ Pro:h16
-    colorscheme Midnight
+    colorscheme torte
+    "colorscheme zellner
 else
     set t_Co=256       " force 256 color mode(s)
     set background=dark
-    "set background=light
     "colorscheme darkblue
     highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 endif
