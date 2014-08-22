@@ -60,7 +60,7 @@ vnoremap <tab> %
 nnoremap <leader><space> :noh<cr>
 
 " pathogen
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " some vim aliases
 nnoremap <leader>gs :Gstatus<cr>
@@ -91,6 +91,7 @@ if has('gui_running')
 else
     set t_Co=256       " force 256 color mode(s)
     set background=dark
+    "set background=light
     "colorscheme darkblue
     highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 endif

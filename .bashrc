@@ -140,3 +140,7 @@ if [ -f ~/.bashrc_local ]; then
 	. ~/.bashrc_local
 fi
 
+# perlbrew
+if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
+    . $HOME/perl5/perlbrew/etc/bashrc
+fi
