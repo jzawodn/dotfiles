@@ -8,6 +8,14 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="afowler"
 
+# See: http://rawsyntax.com/blog/learn-emacs-zsh-and-multi-term/
+if [ -n "$INSIDE_EMACS" ]; then
+    export ZSH_THEME="rawsyntax"
+else
+    #export ZSH_THEME="example"
+    export ZSH_THEME="afowler"
+fi
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -57,3 +65,10 @@ alias gg='git pull origin master'
 alias gf='git fetch'
 alias gm='git merge origin/master'
 alias gpm='git pull origin master'
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+PERL_MB_OPT="--install_base \"/Users/jzawodn/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/jzawodn/perl5"; export PERL_MM_OPT;
+PERL5LIB="$PERL5LIB:/Users/jzawodn/perl5/lib/perl5"; export PERL5LIB
