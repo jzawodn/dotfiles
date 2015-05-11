@@ -26,6 +26,10 @@ set cursorline     " show the line I'm on
 " make sure tab compltion isn't overly agressive
 set wildmode=longest,full
 
+" show weird whitespace
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
+
 " fix indenting of comments, see http://stackoverflow.com/questions/191201/indenting-comments-
 filetype plugin indent on
 syntax enable
