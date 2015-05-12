@@ -47,6 +47,16 @@
 (setq tramp-default-method "scp")
 
 ;; ***************************************************************
+;; Packages
+;; ***************************************************************
+
+(require 'package)
+(push '("marmalade" . "http://marmalade-repo.org/packages/")
+      package-archives )
+(push '("melpa" . "http://melpa.milkbox.net/packages/")
+      package-archives)
+
+;; ***************************************************************
 ;; Mac mucking
 ;; ***************************************************************
 (setq mac-option-key-is-meta nil)
@@ -67,7 +77,6 @@
 (setq message-send-mail-function 'smtpmail-send-it)
 (setq smtpmail-smtp-server "home.craigslist.org")
 (setq smtpmail-smtp-service 25)
-
 
 ;; perltidy note: select region; M-1; M-|; perltidy
 
@@ -144,4 +153,6 @@
  '(default ((t (:slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
 
 ;;(and (load-library "solarized-dark-theme"))
+
+;(require 'evil)
 
