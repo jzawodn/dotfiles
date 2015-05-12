@@ -37,7 +37,7 @@
 (setq cperl-indent-level 4)
 (defalias 'perl-mode 'cperl-mode)
 
-(setq iswitchb-mode t)
+(setq iswitch-mode nil)
 (setq linum-mode 1)
 
 (add-hook 'cperl-mode-hook
@@ -65,19 +65,6 @@
 (setq mac-option-modifier nil)
 ;(setq mac-allow-anti-aliasing nil)
 
-;; ***************************************************************
-;; Mail
-;; ***************************************************************
-;;
-;; See: http://www.gnu.org/software/emacs/manual/html_node/smtpmail/Emacs-Speaks-SMTP.html
-
-;; If you use the default mail user agent.
-(setq send-mail-function 'smtpmail-send-it)
-;; If you use Message or Gnus.
-(setq message-send-mail-function 'smtpmail-send-it)
-(setq smtpmail-smtp-server "home.craigslist.org")
-(setq smtpmail-smtp-service 25)
-
 ;; perltidy note: select region; M-1; M-|; perltidy
 
 ;; http://blog.tremily.us/posts/Emacs_and_aspell_spelling/
@@ -87,6 +74,82 @@
 ;; (require 'magit)
 
 (put 'narrow-to-region 'disabled nil)
+
+;; Misc
+
+;; Save backup files in a dedicated directory
+(setq backup-directory-alist '(("." . "~/.saves")))
+
+;; Set locale to UTF8
+(set-language-environment 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;;
+;; Package Management
+;;
+
+;; Add package sources
+;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
+;;                          ("melpa" . "http://melpa.milkbox.net/packages/")))
+
+;; Set up the package manager of choice. Supports "el-get" and "package.el"
+;;(setq pmoc "el-get")
+(setq pmoc "package.el")
+
+;; List of all wanted packages
+(setq
+ wanted-packages
+ '(
+   color-theme
+   autopair
+   magit
+   go-mode
+))
+
+;; Package manager and packages handler
+(defun install-wanted-packages ()
+  "Install wanted packages according to a specific package manager"
+  (interactive)
+  (cond
+   ;; package.el
+   ((string= pmoc "package.el")
+    (require 'package)
+    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
+    (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+    (add-to-list 'package-archives '("marmelade" . "http://marmalade-repo.org/packages/"))
+    (package-initialize)
+    (let ((need-refresh nil))
+      (mapc (lambda (package-name)
+          (unless (package-installed-p package-name)
+        (set 'need-refresh t))) wanted-packages)
+      (if need-refresh
+        (package-refresh-contents)))
+    (mapc (lambda (package-name)
+        (unless (package-installed-p package-name)
+          (package-install package-name))) wanted-packages)
+    )
+   ;; el-get
+   ((string= pmoc "el-get")
+    (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+    (unless (require 'el-get nil 'noerror)
+      (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (let (el-get-master-branch)
+      (goto-char (point-max))
+      (eval-print-last-sexp))))
+    (el-get 'sync wanted-packages))
+   ;; fallback
+   (t (error "Unsupported package manager")))
+  )
+
+;; Install wanted packages
+(install-wanted-packages)
 
 ;; setup C-c t for ansi-term shortcut
 ;;
@@ -104,21 +167,6 @@
 
 (global-set-key (kbd "C-c t") 'visit-term-buffer)
 
-;; ***************************************************************
-;; IRC stuff
-;; ***************************************************************
-;;
-;; moving this stuff down to see if the nick colors work better here...
-
-;; (setq erc-keywords '("jzawodn" "jzafk" "jzbrb" "jz" "jzout" "jzlunch" "jzerrand" "jzerrands" "jzfood"))
-
-;; (and
-;;  (load-library "erc-highlight-nicknames")
-;;  (add-to-list 'erc-modules 'highlight-nicknames)
-;;  (erc-update-modules))
-
-;; From http://www.emacswiki.org/emacs/ErcFilling
-
 ; (set-background-color "grey")
 ;; (load-theme 'manoj-dark)
 (load-theme 'wombat)
@@ -126,33 +174,36 @@
 (add-hook 'window-configuration-change-hook
 		  '(lambda ()
 			 (setq erc-fill-column (- (window-width) 2))))
-;;(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-;; )
-;;(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-;; '(default ((t (:inherit nil :stipple nil :background "Black" :foreground "Grey" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco")))))
+ (custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+  '(default ((t (:slant normal :weight normal :height 140 :width normal :foundry "apple" :family "Monaco"))))))
 
 ;;(and (load-library "solarized-dark-theme"))
 
 ;(require 'evil)
 
+;; ***************************************************************
+;; Go / golang
+;; ***************************************************************
+
+(require 'go-mode)
+
+(add-hook 'go-mode-hook '(lambda ()
+                           (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)))
+
+(add-hook 'go-mode-hook '(lambda ()
+                           (local-set-key (kbd "C-c C-g") 'go-goto-imports)))
+
+(add-hook 'go-mode-hook '(lambda ()
+                           (local-set-key (kbd "C-c C-f") 'gofmt)))
+
+;(add-hook 'before-save-hook 'gofmt-before-save)
