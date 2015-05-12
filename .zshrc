@@ -57,3 +57,7 @@ alias gg='git pull origin master'
 alias gf='git fetch'
 alias gm='git merge origin/master'
 alias gpm='git pull origin master'
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/gocode
+
