@@ -64,7 +64,7 @@ vnoremap <tab> %
 nnoremap <leader><space> :noh<cr>
 
 " pathogen
-" execute pathogen#infect()
+execute pathogen#infect()
 
 " some vim aliases
 nnoremap <leader>gs :Gstatus<cr>
