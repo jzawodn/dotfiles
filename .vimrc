@@ -27,8 +27,9 @@ set cursorline     " show the line I'm on
 set wildmode=longest,full
 
 " show weird whitespace
-exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
-set list
+"exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+"exec "set listchars=trail:\uB7,nbsp:~"
+"set list
 
 " fix indenting of comments, see http://stackoverflow.com/questions/191201/indenting-comments-
 filetype plugin indent on
@@ -67,13 +68,13 @@ nnoremap <leader><space> :noh<cr>
 execute pathogen#infect()
 
 " some vim aliases
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gcf :Gcommit<cr>
-nnoremap <leader>gca :Gcommit -a<cr>
-nnoremap <leader>gg :!git pull origin master<cr>
-nnoremap <leader>gf :!git fetch<cr>
-nnoremap <leader>gp :!git push<cr>
+"nnoremap <leader>gs :Gstatus<cr>
+"nnoremap <leader>gd :Gdiff<cr>
+"nnoremap <leader>gcf :Gcommit<cr>
+"nnoremap <leader>gca :Gcommit -a<cr>
+"nnoremap <leader>gg :!git pull origin master<cr>
+"nnoremap <leader>gf :!git fetch<cr>
+"nnoremap <leader>gp :!git push<cr>
 nnoremap <leader>pt :%!perltidy -pt=2 -sot -q<cr>
 nnoremap <leader>pz :%!perltidy -pt=2 -sot -et=4 -q<cr>
 nnoremap <leader>, :b#<cr>
@@ -99,6 +100,28 @@ else
     "colorscheme darkblue
     highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 endif
+
+" Golang and vim-go stuff
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 " e scp://user@vmdev/git/clol/lib/perl/CLOL/Indexer/LiveSphinx.pm
