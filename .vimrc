@@ -79,6 +79,10 @@ nnoremap <leader>pt :%!perltidy -pt=2 -sot -q<cr>
 nnoremap <leader>pz :%!perltidy -pt=2 -sot -et=4 -q<cr>
 nnoremap <leader>, :b#<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
+nnoremap <leader>bd :set background=dark<cr>
+nnoremap <leader>bl :set background=light<cr>
+nnoremap <leader>cd :colorscheme default<cr>
+nnoremap <leader>cs :colorscheme solarized<cr>
 
 set guioptions-=T  "remove toolbar
 
@@ -98,6 +102,7 @@ else
     set background=dark
     "set background=light
     "colorscheme darkblue
+    "colorscheme solarized
     highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 endif
 
