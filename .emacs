@@ -71,7 +71,6 @@
 (setq-default ispell-program-name "/usr/local/bin/aspell")
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
-;; (require 'magit)
 
 (put 'narrow-to-region 'disabled nil)
 
@@ -100,56 +99,6 @@
 ;; Set up the package manager of choice. Supports "el-get" and "package.el"
 ;;(setq pmoc "el-get")
 (setq pmoc "package.el")
-
-;; List of all wanted packages
-(setq
- wanted-packages
- '(
-   color-theme
-   autopair
-   magit
-   go-mode
-))
-
-;; Package manager and packages handler
-(defun install-wanted-packages ()
-  "Install wanted packages according to a specific package manager"
-  (interactive)
-  (cond
-   ;; package.el
-   ((string= pmoc "package.el")
-    (require 'package)
-    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-    (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-    (add-to-list 'package-archives '("marmelade" . "http://marmalade-repo.org/packages/"))
-    (package-initialize)
-    (let ((need-refresh nil))
-      (mapc (lambda (package-name)
-          (unless (package-installed-p package-name)
-        (set 'need-refresh t))) wanted-packages)
-      (if need-refresh
-        (package-refresh-contents)))
-    (mapc (lambda (package-name)
-        (unless (package-installed-p package-name)
-          (package-install package-name))) wanted-packages)
-    )
-   ;; el-get
-   ((string= pmoc "el-get")
-    (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-    (unless (require 'el-get nil 'noerror)
-      (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (let (el-get-master-branch)
-      (goto-char (point-max))
-      (eval-print-last-sexp))))
-    (el-get 'sync wanted-packages))
-   ;; fallback
-   (t (error "Unsupported package manager")))
-  )
-
-;; Install wanted packages
-(install-wanted-packages)
 
 ;; setup C-c t for ansi-term shortcut
 ;;
