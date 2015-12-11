@@ -10,7 +10,8 @@ ZSH_THEME="afowler"
 
 # See: http://rawsyntax.com/blog/learn-emacs-zsh-and-multi-term/
 if [ -n "$INSIDE_EMACS" ]; then
-    export ZSH_THEME="rawsyntax"
+    #export ZSH_THEME="rawsyntax"
+    export ZSH_THEME="afowler"
 else
     #export ZSH_THEME="example"
     export ZSH_THEME="afowler"
