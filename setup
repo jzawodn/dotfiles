@@ -53,6 +53,9 @@ for my $dir (@dirs) {
 	handle_dir($dir);
 }
 
+# hack for ssh
+handle_file('.ssh/authorized_keys');
+
 exit;
 
 sub handle_file {

@@ -148,6 +148,12 @@ fi
 
 # Golang / go
 
-export GOROOT=$HOME/go
+if [ -d /usr/local/go ]; then
+    export GOROOT=/usr/local/go
+elif [ -d $HOME/go ]; then
+    export GOROOT=$HOME/go
+else
+    export GOROOT=/tmp
+fi
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/gocode
