@@ -123,7 +123,8 @@ if [ "$USER" == "jzawodn" ]; then
 			source ~/.ssh-agent-`hostname`
 		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
 			source ~/.keychain/`hostname`-sh
-		fi   
+		fi
+        /usr/bin/keychain ~/cl/id_rsa
 	fi
 fi
 
