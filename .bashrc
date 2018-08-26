@@ -124,7 +124,7 @@ if [ "$USER" == "jzawodn" ]; then
 		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
 			source ~/.keychain/`hostname`-sh
 		fi
-        /usr/bin/keychain ~/cl/id_rsa
+        #/usr/bin/keychain ~/cl/id_rsa
 	fi
 fi
 
