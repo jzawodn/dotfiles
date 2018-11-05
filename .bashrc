@@ -134,9 +134,6 @@ fi
 # git config --global color.status auto
 # git config --global color.branch auto
 
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
 if [ -f ~/.bashrc_local ]; then
 	. ~/.bashrc_local
 fi
