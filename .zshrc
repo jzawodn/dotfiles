@@ -66,9 +66,3 @@ alias gf='git fetch'
 alias gm='git merge origin/master'
 alias gpm='git pull origin master'
 
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/gocode
-
-PERL_MB_OPT="--install_base \"/Users/jzawodn/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/jzawodn/perl5"; export PERL_MM_OPT;
-PERL5LIB="$PERL5LIB:/Users/jzawodn/perl5/lib/perl5"; export PERL5LIB
