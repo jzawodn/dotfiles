@@ -112,7 +112,7 @@ fi
 
 ## jzawodn custom
 
-KEYHCHAIN_BIN=`which keychain`
+KEYCHAIN_BIN=`which keychain`
 
 if [ "$USER" == "jzawodn" ]; then 
 	if [ -e $KEYCHAIN_BIN ] ; then
@@ -141,14 +141,3 @@ if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
     . $HOME/perl5/perlbrew/etc/bashrc
 fi
 
-# Golang / go
-
-if [ -d /usr/local/go ]; then
-    export GOROOT=/usr/local/go
-elif [ -d $HOME/go ]; then
-    export GOROOT=$HOME/go
-else
-    export GOROOT=/tmp
-fi
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=$HOME/gocode
