@@ -112,13 +112,11 @@ fi
 
 ## jzawodn custom
 
-export PATH="/home/jzawodn/bin:$PATH:/usr/local/bin:/usr/local/mysql/bin"
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
-# http://apple.stackexchange.com/questions/33794/getting-perl-dbdmysql-working-on-os-x-10-7
+KEYHCHAIN_BIN=`which keychain`
 
 if [ "$USER" == "jzawodn" ]; then 
-	if [ -e /usr/bin/keychain ] ; then
-		/usr/bin/keychain ~/.ssh/id_rsa
+	if [ -e $KEYCHAIN_BIN ] ; then
+		$KEYCHAIN_BIN ~/.ssh/id_rsa
 		if [ -e ~/.ssh-agent-`hostname` ] ; then 
 			source ~/.ssh-agent-`hostname`
 		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
@@ -132,9 +130,6 @@ fi
 # git config --global color.diff auto
 # git config --global color.status auto
 # git config --global color.branch auto
-
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 if [ -f ~/.bashrc_local ]; then
 	. ~/.bashrc_local
