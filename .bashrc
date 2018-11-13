@@ -121,7 +121,8 @@ if [ "$USER" == "jzawodn" ]; then
 			source ~/.ssh-agent-`hostname`
 		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
 			source ~/.keychain/`hostname`-sh
-		fi   
+		fi
+        #/usr/bin/keychain ~/cl/id_rsa
 	fi
 fi
 
@@ -139,3 +140,15 @@ fi
 if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
     . $HOME/perl5/perlbrew/etc/bashrc
 fi
+
+# Golang / go
+
+if [ -d /usr/local/go ]; then
+    export GOROOT=/usr/local/go
+elif [ -d $HOME/go ]; then
+    export GOROOT=$HOME/go
+else
+    export GOROOT=/tmp
+fi
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/gocode
