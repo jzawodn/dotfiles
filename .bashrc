@@ -116,7 +116,7 @@ KEYCHAIN_BIN=`which keychain`
 
 if [ "$USER" == "jzawodn" ]; then 
 	if [ -e $KEYCHAIN_BIN ] ; then
-		$KEYCHAIN_BIN ~/.ssh/id_rsa
+		$KEYCHAIN_BIN ~/.ssh/id_*_rsa
 		if [ -e ~/.ssh-agent-`hostname` ] ; then 
 			source ~/.ssh-agent-`hostname`
 		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
@@ -140,4 +140,6 @@ fi
 if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
     . $HOME/perl5/perlbrew/etc/bashrc
 fi
+
+EDITOR=vim
 
