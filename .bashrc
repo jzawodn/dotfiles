@@ -141,6 +141,6 @@ if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
     . $HOME/perl5/perlbrew/etc/bashrc
 fi
 
-EDITOR=vim
+export EDITOR=vim
 alias rescreen="screen -dr || screen -e^\\a"
 
