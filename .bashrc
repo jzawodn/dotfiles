@@ -142,5 +142,5 @@ if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
 fi
 
 export EDITOR=vim
-alias rescreen="screen -dr || screen -e^\\a"
+alias rescreen="screen -dr || screen -e^\\\\a"
 
