@@ -16,4 +16,5 @@ net-tools
 rsync
 git
 tinc
+perlbrew
 
