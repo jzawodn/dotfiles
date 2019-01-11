@@ -13,4 +13,8 @@ curl
 mysql-client
 sqlite
 net-tools
+rsync
+git
+tinc
+perlbrew
 
