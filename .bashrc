@@ -136,6 +136,9 @@ if [ -f ~/.bashrc_local ]; then
 	. ~/.bashrc_local
 fi
 
+# xterm window title
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
+
 # perlbrew
 if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
     . $HOME/perl5/perlbrew/etc/bashrc
