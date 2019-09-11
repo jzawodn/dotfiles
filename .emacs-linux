@@ -1,0 +1,96 @@
+(add-to-list 'load-path "~/.lisp/")
+
+(global-set-key [f4] 'goto-line)
+(global-set-key [f5] 'replace-string)
+
+(setq-default transient-mark-mode t)
+(setq-default indent-tabs-mode nil)
+
+;; ***************************************************************
+;; Basic Modes and Editing
+;; ***************************************************************
+
+(setq default-major-mode 'text-mode)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+(setq
+ scroll-margin 0
+ scroll-preserve-screen-position 1)
+
+(font-lock-mode)
+
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+(column-number-mode 1)
+
+;; ***************************************************************
+;; Tabs and indentation and cperl-mode
+;; ***************************************************************
+
+(setq default-tab-width 4
+	  cperl-close-paren-offset -4
+	  cperl-continued-statement-offset 4
+	  cperl-indent-parens-as-block t
+	  cperl-tab-always-indent t)
+
+(setq cperl-indent-level 4)
+(defalias 'perl-mode 'cperl-mode)
+
+(setq iswitch-mode nil)
+(setq linum-mode 1)
+
+(add-hook 'cperl-mode-hook
+		  (lambda() (linum-mode 1)))
+
+(require 'tramp)
+(setq tramp-default-method "scp")
+
+;; ***************************************************************
+;; Packages
+;; ***************************************************************
+
+(require 'package)
+(push '("marmalade" . "http://marmalade-repo.org/packages/")
+      package-archives )
+(push '("melpa" . "http://melpa.milkbox.net/packages/")
+      package-archives)
+
+;; perltidy note: select region; M-1; M-|; perltidy
+
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
+
+(put 'narrow-to-region 'disabled nil)
+
+;; Misc
+
+;; Save backup files in a dedicated directory
+(setq backup-directory-alist '(("." . "~/.saves")))
+
+;; Set locale to UTF8
+(set-language-environment 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(setq locale-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+;; setup C-c t for ansi-term shortcut
+;;
+;; http://emacsredux.com/blog/2013/03/29/terminal-at-your-fingertips/
+
+(defun visit-term-buffer ()
+  "Create or visit a terminal buffer."
+  (interactive)
+  (if (not (get-buffer "*ansi-term*"))
+      (progn
+        (split-window-sensibly (selected-window))
+        (other-window 1)
+        (ansi-term (getenv "SHELL")))
+    (switch-to-buffer-other-window "*ansi-term*")))
+
+(global-set-key (kbd "C-c t") 'visit-term-buffer)
+
+(load-theme 'wombat)
+
+(set-face-attribute 'default nil :height 150)
