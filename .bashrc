@@ -116,7 +116,7 @@ KEYCHAIN_BIN=`which keychain`
 
 if [ "$USER" == "jzawodn" ]; then 
 	if [ -e $KEYCHAIN_BIN ] ; then
-		$KEYCHAIN_BIN ~/.ssh/id_*_rsa
+		$KEYCHAIN_BIN ~/.ssh/id*_rsa
 		if [ -e ~/.ssh-agent-`hostname` ] ; then 
 			source ~/.ssh-agent-`hostname`
 		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
