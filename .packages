@@ -17,4 +17,5 @@ rsync
 git
 tinc
 perlbrew
+traceroute
 
