@@ -21,7 +21,7 @@ set ttyfast        " because I'm not on dialup
 set ruler          " to know where I am
 set modeline
 set modelines=5
-set cursorline     " show the line I'm on
+"set cursorline     " show the line I'm on
 
 " make sure tab compltion isn't overly agressive
 set wildmode=longest,full
