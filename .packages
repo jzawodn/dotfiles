@@ -17,4 +17,7 @@ rsync
 git
 tinc
 perlbrew
+traceroute
+openssh-server
+wireguard
 
