@@ -116,13 +116,14 @@ KEYCHAIN_BIN=`which keychain`
 
 if [ "$USER" == "jzawodn" ]; then 
 	if [ -e $KEYCHAIN_BIN ] ; then
-		$KEYCHAIN_BIN ~/.ssh/id*_rsa
-		if [ -e ~/.ssh-agent-`hostname` ] ; then 
-			source ~/.ssh-agent-`hostname`
-		elif [ -e ~/.keychain/`hostname`-sh ] ; then 
-			source ~/.keychain/`hostname`-sh
-		fi
-        #/usr/bin/keychain ~/cl/id_rsa
+	    $KEYCHAIN_BIN ~/.ssh/id*_rsa
+            $KEYCHAIN_BIN ~/.ssh/id_ed*
+	    if [ -e ~/.ssh-agent-`hostname` ] ; then 
+		source ~/.ssh-agent-`hostname`
+	    elif [ -e ~/.keychain/`hostname`-sh ] ; then 
+		source ~/.keychain/`hostname`-sh
+	    fi
+            #/usr/bin/keychain ~/cl/id_rsa
 	fi
 fi
 

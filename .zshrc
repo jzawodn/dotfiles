@@ -53,7 +53,7 @@ DISABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git svn)
 
-source $ZSH/oh-my-zsh.sh
+##source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
